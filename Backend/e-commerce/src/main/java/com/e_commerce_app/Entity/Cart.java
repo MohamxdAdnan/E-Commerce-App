@@ -20,6 +20,5 @@ public class Cart {
     private Long cartId;
     @Column(nullable = false)
     private int quantity;
-    private List<CartItem> cartItemList;
 
 }

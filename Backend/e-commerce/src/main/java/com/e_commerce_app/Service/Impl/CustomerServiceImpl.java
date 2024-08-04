@@ -5,11 +5,15 @@ import com.e_commerce_app.Entity.Customer;
 import com.e_commerce_app.Exception.ResourceNotFoundException;
 import com.e_commerce_app.Repository.CustomerRepository;
 import com.e_commerce_app.Service.CustomerService;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
+@AllArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
     private ModelMapper modelMapper;
@@ -21,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDto updatCustomer(CustomerDto customerDto, Long customerId) {
+    public CustomerDto updateCustomer(CustomerDto customerDto, Long customerId) {
         Customer customer=customerRepository.findById(customerId)
                 .orElseThrow(()-> new ResourceNotFoundException("Customer Not Found with ID : " + customerId));
         customer.setName(customerDto.getName());
