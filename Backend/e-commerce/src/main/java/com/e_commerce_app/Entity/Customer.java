@@ -20,13 +20,13 @@ public class Customer {
     private Long customerId;
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private String password;
     @Column(nullable = false)
     private String address;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private Long phoneNumber;
 
     private List<Authority> authorityList;
