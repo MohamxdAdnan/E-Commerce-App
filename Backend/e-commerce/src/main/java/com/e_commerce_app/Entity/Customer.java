@@ -29,9 +29,9 @@ public class Customer implements UserDetails {
     private String email;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
+    @Column(unique = true)
     private String address;
-    @Column(nullable = false, unique = true)
+    @Column (unique = true)
     private Long phoneNumber;
 
     @Enumerated(EnumType.STRING)
