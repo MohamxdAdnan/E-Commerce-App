@@ -20,5 +20,10 @@ public class Cart {
     private Long cartId;
     @Column(nullable = false)
     private int quantity;
+    @OneToMany(mappedBy="cart")
+    List<CartItem> cartItemList;
+
+    @OneToOne(mappedBy = "cart")
+    private Customer customer;
 
 }

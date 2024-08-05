@@ -34,6 +34,10 @@ public class Customer implements UserDetails {
     @Column (unique = true)
     private Long phoneNumber;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cart_id", referencedColumnName = "cartId")
+    private Cart cart;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
