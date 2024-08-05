@@ -1,12 +1,19 @@
 import React from "react";
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 const ProductCard = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const username = queryParams.get('username');
+    const token = queryParams.get('token');
   const [products, setProducts] = useState([]);
 
+  console.log(username);
+  console.log(token);
+
   useEffect(() => {
-    // Fetch products from API
     axios
       .get("http://localhost:8080/api/products")
       .then((response) => setProducts(response.data))

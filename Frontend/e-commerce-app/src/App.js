@@ -3,6 +3,8 @@ import './App.css';
 import NavBar from './NavBar/NavBar';
 import LoginPage from "./Login/LoginPage";
 import Products from "./Products/Products";
+import ProductCard from "./Products/Card/ProductCard";
+import Register from "./Register/Register";
 
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
 
         <Routes>
           <Route exact path="/login" element={<LoginPage/>} />
-          <Route exact path="/listproducts" element={<Products/>} />
+          <Route exact path="/listproducts" element={<ProductCard/>} />
+          <Route exact path="/register" element={<Register/>} />
         </Routes>
       </Router>
     </div>
